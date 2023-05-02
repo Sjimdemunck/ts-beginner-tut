@@ -17,8 +17,11 @@ interface Post {
  * How do we ensure that makeUser ALWAYS
  * returns a user?
  */
-const makeUser = () => {
-  return {};
+const makeUser = (): User => {
+  // @ts-expect-error - this is not a valid user (defeats the purpose of the excercise)
+  return {
+
+  };
 };
 
 it("Should return a valid user", () => {
